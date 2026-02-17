@@ -1,39 +1,33 @@
 class Person:
   def __init__(self, name, age):
     self.name = name
-    self.__age = age # Private property
+    self.age = age
 
-p1 = Person("Emil", 25)
+p1 = Person("Emil", 36)
+
 print(p1.name)
-print(p1.__age) # This will cause an error 
+print(p1.age)
+# --------------------------------------------------------------------------------------------------------------------------
+class Car:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+car1 = Car("Toyota", "Corolla")
+
+print(car1.brand)
+print(car1.model)
 # --------------------------------------------------------------------------------------------------------------------------
 class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.__age = age
+  species = "Human" # Class property
 
-  def get_age(self):
-    return self.__age
+  def __init__(self, name):
+    self.name = name # Instance property
 
-p1 = Person("Tobias", 25)
-print(p1.get_age()) 
-# --------------------------------------------------------------------------------------------------------------------------
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.__age = age
+p1 = Person("Emil")
+p2 = Person("Tobias")
 
-  def get_age(self):
-    return self.__age
-
-  def set_age(self, age):
-    if age > 0:
-      self.__age = age
-    else:
-      print("Age must be positive")
-
-p1 = Person("Tobias", 25)
-print(p1.get_age())
-
-p1.set_age(26)
-print(p1.get_age()) 
+print(p1.name)
+print(p2.name)
+print(p1.species)
+print(p2.species)
