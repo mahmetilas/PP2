@@ -1,33 +1,31 @@
-x = min(5, 10, 25)
-y = max(5, 10, 25)
-
-print(x)
-print(y)
-# --------------------------------------------------------------------------------------------------------------------------
-x = abs(-7.25)
-
-print(x)
-# --------------------------------------------------------------------------------------------------------------------------
-x = pow(4, 3)
-
-print(x)
-# --------------------------------------------------------------------------------------------------------------------------
+# Write a Python program to convert degree to radian.
 import math
 
-x = math.sqrt(64)
+degree = float(input("Input degree: "))
+radian = degree * math.pi / 180
 
-print(x)
+print("Output radian:", round(radian, 6))
 # --------------------------------------------------------------------------------------------------------------------------
+# Write a Python program to calculate the area of a trapezoid.
+height = float(input("Height: "))
+a = float(input("Base, first value: "))
+b = float(input("Base, second value: "))
+
+area = (a + b) / 2 * height
+print("Expected Output:", area)
+# --------------------------------------------------------------------------------------------------------------------------
+# Write a Python program to calculate the area of regular polygon.
 import math
 
-x = math.ceil(1.4)
-y = math.floor(1.4)
+n = int(input("Input number of sides: "))
+s = float(input("Input the length of a side: "))
 
-print(x) # returns 2
-print(y) # returns 1
+area = (n * s * s) / (4 * math.tan(math.pi / n))
+print("The area of the polygon is:", round(area, 0))
 # --------------------------------------------------------------------------------------------------------------------------
-import math
+# Write a Python program to calculate the area of a parallelogram.
+base = float(input("Length of base: "))
+height = float(input("Height of parallelogram: "))
 
-x = math.pi
-
-print(x)
+area = base * height
+print("Expected Output:", area)
