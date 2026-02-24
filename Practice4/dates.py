@@ -1,39 +1,24 @@
-# Write a Python program to subtract five days from current date.
-from datetime import datetime, timedelta
+import datetime
 
-today = datetime.now()
-five_d_a = today - timedelta(days=5)
+x = datetime.datetime.now()
 
-print(five_d_a.strftime('%Y-%B-%d'))
-# ---------------------------------------------------------------------------------------------------------------
-# Write a Python program to print yesterday, today, tomorrow.
-from datetime import datetime, timedelta
+print(x)
+# --------------------------------------------------------------------------------------------------------------------------
+import datetime
 
-today = datetime.now()
-tomorrow = today + timedelta(days=1)
-yesterday = today - timedelta(days=1)
+x = datetime.datetime.now()
 
-print(yesterday.strftime('%Y-%B-%d'))
-print(today.strftime('%Y-%B-%d'))
-print(tomorrow.strftime('%Y-%B-%d'))
-# ---------------------------------------------------------------------------------------------------------------
-# Write a Python program to drop microseconds from datetime.
-from datetime import datetime, timedelta
+print(x.year)
+print(x.strftime("%A"))
+# --------------------------------------------------------------------------------------------------------------------------
+import datetime
 
-today = datetime.now()
-print(today.strftime('%Y-%m-%d %H:%M:%S'))
-# ---------------------------------------------------------------------------------------------------------------
-# Write a Python program to calculate two date difference in seconds.
-from datetime import datetime
+x = datetime.datetime(2020, 5, 17)
 
-date1_str = input("Enter first date (YYYY-MM-DD HH:MM:SS): ")
-date2_str = input("Enter second date (YYYY-MM-DD HH:MM:SS): ")
+print(x)
+# --------------------------------------------------------------------------------------------------------------------------
+import datetime
 
-date1 = datetime.strptime(date1_str, "%Y-%m-%d %H:%M:%S")
-date2 = datetime.strptime(date2_str, "%Y-%m-%d %H:%M:%S")
+x = datetime.datetime(2018, 6, 1)
 
-difference = date2 - date1
-
-seconds = abs(difference.total_seconds())
-
-print("Difference in seconds:", int(seconds))
+print(x.strftime("%B"))
