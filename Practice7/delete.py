@@ -12,7 +12,7 @@ cur = conn.cursor()
 phone = input("Enter phone to delete: ")
 
 cur.execute(
-    "DELETE FROM phonebook WHERE phone = %s",
+    "DELETE FROM numbers WHERE phone = %s",
     (phone,)
 )
 

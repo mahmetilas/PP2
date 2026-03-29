@@ -13,7 +13,7 @@ def upphone():
     new_phone = input("Enter new phone: ")
 
     cur.execute(
-        "UPDATE phonebook SET phone = %s WHERE name = %s",
+        "UPDATE numbers SET num = %s WHERE name = %s",
         (new_phone, name)
     )
 
@@ -24,7 +24,7 @@ def upname():
     new_name = input("Enter new name: ")
 
     cur.execute(
-        "UPDATE phonebook SET name = %s WHERE name = %s",
+        "UPDATE numbers SET name = %s WHERE name = %s",
         (new_name, old_name)
     )
 
@@ -32,8 +32,8 @@ def upname():
     
 x = input("print '1' for updating name '2' for updating phone number: ")
 
-if  x== 1: upname()
-elif x==2: upphone()
+if  x== '1': upname()
+elif x=='2': upphone()
 
 cur.close()
 conn.close()

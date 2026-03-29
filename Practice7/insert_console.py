@@ -13,7 +13,7 @@ name = input("Enter name: ")
 phone = input("Enter phone: ")
 
 cur.execute(
-    "INSERT INTO phonebook (name, phone) VALUES (%s, %s)",
+    "INSERT INTO numbers (name, num) VALUES (%s, %s)",
     (name, phone)
 )
 conn.commit()

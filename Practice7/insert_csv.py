@@ -16,7 +16,7 @@ with open(f"{f_name}", newline='') as file:
     reader = csv.reader(file)
     for row in reader:
         cur.execute(
-            "INSERT INTO phonebook (name, phone) VALUES (%s, %s)",
+            "INSERT INTO numbers (name, num) VALUES (%s, %s)",
             (row[0], row[1])
         )
 
