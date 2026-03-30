@@ -1,4 +1,4 @@
-import psycopg2
+import psycopg2, csv
 from config import load_config
 
 def by_name(cur):
