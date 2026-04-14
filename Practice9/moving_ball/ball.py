@@ -21,16 +21,16 @@ while done:
             done = False
     if keys[pygame.K_UP]:
         if circle_start_h > 30:
-            circle_start_h -= 10
+            circle_start_h -= 20
     if keys[pygame.K_DOWN]:
         if circle_start_h < 662:
-            circle_start_h += 10
+            circle_start_h += 20
     if keys[pygame.K_LEFT]:
         if circle_start_w > 30:
-            circle_start_w -= 10
+            circle_start_w -= 20
     if keys[pygame.K_RIGHT]:
         if circle_start_w < 1162:
-            circle_start_w += 10
+            circle_start_w += 20
     
     screen.fill(WHITE)
     pygame.draw.circle(screen, RED, (circle_start_w, circle_start_h), 25)
