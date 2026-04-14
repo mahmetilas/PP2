@@ -12,33 +12,31 @@ clock_img = pygame.image.load(os.path.join(images, 'clck.png')).convert_alpha()
 hand_l = pygame.image.load(os.path.join(images, 'hnd.png')).convert_alpha()  # seconds
 hand_r = pygame.image.load(os.path.join(images, 'hnd.png')).convert_alpha()  # minutes
 
-clock_img = pygame.transform.scale(clock_img, (800, 600))
+clock_img = pygame.transform.scale(clock_img, (800, 800))
 hand_l_base = pygame.transform.scale(hand_l, (120, 240))
 hand_r_base = pygame.transform.scale(hand_r, (100, 200))
 
-CENTER = (600, 340)
+CENTER = (600, 350)
 
 clock = pygame.time.Clock()
-done = False
+done = True
 
-last_second = -1  # чтобы обновлять раз в секунду
+last_second = -1
 
-while not done:
+while done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            done = True
+            done = False
 
     now = datetime.datetime.now()
     m = now.minute
     s = now.second
 
-    # обнова только если секунда изменилась
     if s != last_second:
         last_second = s
 
-        # углы
         seconds_angle = -s * 6
-        minutes_angle = -(m * 6 + s * 0.1)  # плавное движение минут
+        minutes_angle = -(m * 6 + s * 0.1)
 
         rotated_seconds = pygame.transform.rotate(hand_l_base, seconds_angle)
         rotated_minutes = pygame.transform.rotate(hand_r_base, minutes_angle)
@@ -50,11 +48,10 @@ while not done:
 
     clock_rect = clock_img.get_rect(center=CENTER)
     screen.blit(clock_img, clock_rect)
-
-    screen.blit(rotated_minutes, minutes_rect)   # правая рука = минуты
-    screen.blit(rotated_seconds, seconds_rect)   # левая рука = секунды
+    screen.blit(rotated_minutes, minutes_rect)
+    screen.blit(rotated_seconds, seconds_rect)
 
     pygame.display.flip()
-    clock.tick(60)
+    clock.tick(1)
 
 pygame.quit()
