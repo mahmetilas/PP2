@@ -62,12 +62,17 @@ while done:
                     pygame.mixer.music.load(songs[count])
                     pygame.mixer.music.play()
 
-    text = font.render(f"{(songs[count])[56:-4]}", True, (188, 86, 86))
+    song_name = os.path.basename(songs[count])[:-4].replace('_', ' ')
+    text = font.render(f"{song_name}", True, (188, 86, 86))
     screen.fill((255, 242, 242))
     screen.blit(text,
         (720 - text.get_width() // 2, 360 - text.get_height() // 2))
+    
+    progress = pos / (length * 1000)
+    x = 40 + (1400 - 40) * progress
+
     pygame.draw.line(screen, (240, 220, 220), (40, 600), (1400, 600), 20)
-    pygame.draw.circle(screen, (94,52,52), (40+13.6*(pos/length)*0.1,600), 15)
+    pygame.draw.circle(screen, (94,52,52), (int(x), 600), 15)
 
     pygame.display.flip()
     clock.tick(10)
