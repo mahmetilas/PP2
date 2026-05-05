@@ -1,6 +1,7 @@
 import psycopg2, csv
 from config import load_config
 
+# ===============================================================
 def by_name(cur):
     name = input("Enter name to search: ")
 
@@ -11,6 +12,7 @@ def by_name(cur):
 
     print(cur.fetchall())
 
+# ===============================================================
 def byphone(cur):
     prefix = input("Enter phone prefix: ")
 
@@ -21,6 +23,7 @@ def byphone(cur):
 
     print(cur.fetchall())
 
+# ===============================================================
 def insert_csv(cur):
     f_name = input("csv file name: ").strip()
 
@@ -32,6 +35,7 @@ def insert_csv(cur):
                 (row[0], row[1])
             )
 
+# ===============================================================
 def insert_con(cur):
     name = input("Enter name: ")
     phone = input("Enter phone: ")
@@ -41,6 +45,7 @@ def insert_con(cur):
         (name, phone)
     )
 
+# ===============================================================
 def delete(cur):
     phone = input("Enter phone to delete: ")
 
@@ -49,6 +54,7 @@ def delete(cur):
         (phone,)
     )
 
+# ===============================================================
 def upphone(cur): 
     name = input("Enter name to update phone: ")
     new_phone = input("Enter new phone: ")
@@ -59,6 +65,7 @@ def upphone(cur):
     )
 
 
+# ===============================================================
 def upname(cur):
     old_name = input("Enter current name: ")
     new_name = input("Enter new name: ")
@@ -68,6 +75,7 @@ def upname(cur):
         (new_name, old_name)
     )
 
+# ===============================================================
 def showall(cur):
     cur = conn.cursor()
 
